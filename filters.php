@@ -17,6 +17,8 @@ interface ImgFilter {
 class Blur implements ImgFilter {
 
     public function execute($param) {
+        // Install ImageMagick library and comment out following code
+        /*
         $img = new Imagick();
         $img->readImage($param['image_path']);
         $img->resizeimage($param['cols'], $param['rows'], $param['filter'],
@@ -24,6 +26,8 @@ class Blur implements ImgFilter {
         $img->writeimage();
         $img->clear();
         $img->destroy();
+         *
+         */
     }
 
 }
@@ -58,6 +62,8 @@ class Convert implements ImgFilter {
 class Resize implements ImgFilter {
 
     public function execute($param) {
+        // Install ImageMagick library and comment out following code
+        /*
         $img = new Imagick();
         $img->readImage($param['image_path']);
         $img->resizeimage($param['cols'], $param['rows'], $param['filter'],
@@ -65,6 +71,8 @@ class Resize implements ImgFilter {
         $img->writeimage();
         $img->clear();
         $img->destroy();
+         * 
+         */
     }
 
 }
@@ -227,7 +235,7 @@ class Effects {
 class imageHandler {
     /*
      * @param - image data, associative array of the form Array(imgId=>Array(operationId=>Array('effectId'=>effectId, 'value'=>effectValue)))
-     * sample data - array(0=>array(1=>array('id'=>'effect1', 'val'=>5)), 1=>array(1=>array('id'=>'effect3', 'val'=>50))));
+     * sample data - array(0=>array(1=>array('id'=>'effect1','val'=>5)),1=>array(1=>array('id'=>'effect3','val'=>50)));
      * @return - none
      */
 
